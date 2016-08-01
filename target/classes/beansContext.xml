@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- 	<context:property-placeholder location="classpath:jdbc.properties"/> -->
+
+<!-- 	<bean	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 		<property name="location" value="classpath:monFichier.properties" /> -->
+<!-- 	</bean>  -->
+	
+	<bean id="developpeur" class="ma.formation.spring.Developpeur" >
+		<property name="nom" value="Olivier"></property>
+		<property name="anneesExperience">
+			<value>7</value>
+		</property>
+	</bean>
+	
+	<bean id="chefDeveloppeur" class="ma.formation.spring.Developpeur">
+		<property name="nom" value="Franck"></property>
+		<property name="anneesExperience">
+			<value>10</value>
+		</property>
+	</bean>
+	
+	<bean id="societeDevLogiciel" class="ma.formation.spring.SocieteDevLogiciel">
+		<property name="developpeur" ref="developpeur"></property>
+		<property name="chefDeveloppeur" ref="chefDeveloppeur"></property>
+	</bean>
+
+</beans>
